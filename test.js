@@ -73,24 +73,28 @@ var data = [
             ];
 
 
-//clevertap.upload(data, {"debug":1}, (res) => console.log(res));
-var query = {"event_name":
-                "choseNewFavoriteFood",
-                "props": 
-                [{"name":"value","operator":"contains", "value":"piz"}],
-                "from": 20150810,
-                "to": 20151025
-                }
-
-clevertap.events(query, {"debug":1}, (res) => console.log(res));
+clevertap.upload(data, {"debug":1, batchSize:1000}, (res) => {
+    console.log("upload result is \n");
+    console.log(res);
+});
 
 query = {"event_name":
-        "choseNewFavoriteFood",
-        "props": 
-        [{"name":"value","operator":"contains", "value":"piz"}],
-        "from": 20150810,
-        "to": 20151025
+            "choseNewFavoriteFood",
+            "props": 
+            [{"name":"value","operator":"contains", "value":"piz"}],
+            "from": 20150810,
+            "to": 20151025
         }
 
-clevertap.profiles(query, {"debug":1}, (res) => console.log(res));
+clevertap.events(query, {debug:1, batchSize:6000}, (res) => console.log(res));
+
+query = {"event_name":
+            "choseNewFavoriteFood",
+            "props": 
+            [{"name":"value","operator":"contains", "value":"piz"}],
+            "from": 20150810,
+            "to": 20151025
+        }
+
+clevertap.profiles(query, {debug:1, batchSize:200}, (res) => console.log(res));
 
