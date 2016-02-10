@@ -73,11 +73,11 @@ var data = [
             ];
 
 
-clevertap.upload(data, {"debug":1, batchSize:1000}, (res) => {
-    console.log("\n");
-    console.log("upload result is: ");
-    console.log(JSON.stringify(res, null, 4));
-});
+// callback style
+clevertap.upload(data, {"debug":1, batchSize:1000}, (res) => {_log("upload", res)});
+
+// or if you prefer Promises
+//clevertap.upload(data, {"debug":1, batchSize:1000}).then( (res) => {_log("upload", res)} );
 
 query = {"event_name":
             "choseNewFavoriteFood",
@@ -87,11 +87,11 @@ query = {"event_name":
             "to": 20151025
         }
 
-clevertap.events(query, {debug:1, batchSize:6000}, (res) => {
-    console.log("\n");
-    console.log("events result is: ");
-    console.log(JSON.stringify(res, null, 4));
-});
+// callback style
+//clevertap.events(query, {debug:1, batchSize:6000}, (res) => {_log("events", res)});
+
+// or if you prefer Promises
+clevertap.events(query, {debug:1, batchSize:6000}).then( (res) => {_log("events", res)} );
 
 query = {"event_name":
             "choseNewFavoriteFood",
@@ -101,9 +101,15 @@ query = {"event_name":
             "to": 20151025
         }
 
-clevertap.profiles(query, {debug:1, batchSize:200}, (res) => {
-    console.log("\n");
-    console.log("profiles result is: ");
-    console.log(JSON.stringify(res, null, 4));
-});
+//callback style
+//clevertap.profiles(query, {debug:1, batchSize:200}, (res) => {_log("profiles", res)});
 
+// or if you prefer Promises
+clevertap.profiles(query, {debug:1, batchSize:200}).then( (res) => {_log("profiles", res)} );
+
+
+var _log = (type, result) => {
+    console.log("\n");
+    console.log(`${type} result is: `);
+    console.log(JSON.stringify(result, null, 4));
+};    
