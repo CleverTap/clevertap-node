@@ -1,0 +1,27 @@
+{
+  "name": "clevertap-node",
+  "version": "1.0.0",
+  "description": "CleverTap API library for node",
+  "main": "./lib/clevertap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CleverTap/clevertap-node.git"
+  },
+  "keywords": [
+    "node",
+    "CleverTap"
+  ],
+  "author": "CleverTap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CleverTap/clevertap-node/issues"
+  },
+  "homepage": "https://github.com/CleverTap/clevertap-node",
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "request": "^2.69.0"
+  }
+}
