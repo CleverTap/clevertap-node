@@ -74,8 +74,9 @@ var data = [
 
 
 clevertap.upload(data, {"debug":1, batchSize:1000}, (res) => {
-    console.log("upload result is \n");
-    console.log(res);
+    console.log("\n");
+    console.log("upload result is: ");
+    console.log(JSON.stringify(res, null, 4));
 });
 
 query = {"event_name":
@@ -86,7 +87,11 @@ query = {"event_name":
             "to": 20151025
         }
 
-clevertap.events(query, {debug:1, batchSize:6000}, (res) => console.log(res));
+clevertap.events(query, {debug:1, batchSize:6000}, (res) => {
+    console.log("\n");
+    console.log("events result is: ");
+    console.log(JSON.stringify(res, null, 4));
+});
 
 query = {"event_name":
             "choseNewFavoriteFood",
@@ -96,5 +101,9 @@ query = {"event_name":
             "to": 20151025
         }
 
-clevertap.profiles(query, {debug:1, batchSize:200}, (res) => console.log(res));
+clevertap.profiles(query, {debug:1, batchSize:200}, (res) => {
+    console.log("\n");
+    console.log("profiles result is: ");
+    console.log(JSON.stringify(res, null, 4));
+});
 
