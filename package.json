@@ -15,7 +15,7 @@
     "CleverTap"
   ],
   "author": "CleverTap",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CleverTap/clevertap-node/issues"
   },
