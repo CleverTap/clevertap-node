@@ -63,7 +63,6 @@ See [example.js](https://github.com/CleverTap/clevertap-node/blob/master/example
 Also please see our [Server API documentation](https://support.clevertap.com/server/overview/).
 
 ## Tests
-
 ```
 npm install  
 npm test
