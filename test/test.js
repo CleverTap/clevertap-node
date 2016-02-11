@@ -1,7 +1,9 @@
+const assert = require('assert');
+
 const CT_ACCOUNT_ID = "948-4KK-444Z"
 const CT_ACCOUNT_PASSCODE = "QAE-AWB-AAAL"
 
-const CleverTap = require('./lib/clevertap');
+const CleverTap = require('../lib/clevertap');
 const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE);
 
 var t = Math.floor((new Date).getTime()/1000);
@@ -73,11 +75,14 @@ var data = [
             ];
 
 
-// callback style
-clevertap.upload(data, {"debug":1, batchSize:1000}, (res) => {_log("upload", res)});
-
-// or if you prefer Promises
-//clevertap.upload(data, {"debug":1, batchSize:1000}).then( (res) => {_log("upload", res)} );
+describe('#upload()', function () {
+    it('should return 6 processed records', function (done) {
+      clevertap.upload(data, {batchSize:1000}).then( (res) => {
+          assert.equal(6, res.processed);
+          done();
+      });
+    });
+});
 
 var query = {"event_name":
             "choseNewFavoriteFood",
@@ -85,13 +90,17 @@ var query = {"event_name":
             [{"name":"value","operator":"contains", "value":"piz"}],
             "from": 20150810,
             "to": 20151025
-        }
+        };
 
-// callback style
-//clevertap.events(query, {debug:1, batchSize:6000}, (res) => {_log("events", res)});
+describe('#profiles()', function () {
+    it('should return 1 user profile', function (done) {
+      clevertap.profiles(query,(res) => {
+          assert.equal(1, res.length);
+          done();
+      });
+    });
+});
 
-// or if you prefer Promises
-clevertap.events(query, {debug:1, batchSize:6000}).then( (res) => {_log("events", res)} );
 
 query = {"event_name":
             "choseNewFavoriteFood",
@@ -99,17 +108,14 @@ query = {"event_name":
             [{"name":"value","operator":"contains", "value":"piz"}],
             "from": 20150810,
             "to": 20151025
-        }
+        };
 
-//callback style
-//clevertap.profiles(query, {debug:1, batchSize:200}, (res) => {_log("profiles", res)});
+describe('#events()', function () {
+    it('should return at least 1 event', function (done) {
+      clevertap.events(query,(res) => {
+          assert(res.length >= 1);
+          done();
+      });
+    });
+});
 
-// or if you prefer Promises
-clevertap.profiles(query, {debug:1, batchSize:200}).then( (res) => {_log("profiles", res)} );
-
-
-var _log = (type, result) => {
-    console.log("\n");
-    console.log(`${type} result is: `);
-    console.log(JSON.stringify(result, null, 4));
-};    
