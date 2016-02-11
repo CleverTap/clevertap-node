@@ -4,7 +4,7 @@
 
 [![CI Status](http://img.shields.io/travis/CleverTap/clevertap-node.svg?style=flat)](https://travis-ci.org/CleverTap/clevertap-node)
 
-Fully async Node.js server module for accessing the CleverTap Server API
+Fully async Node.js server module for accessing the [CleverTap](https://clevertap.com/) Server API
 
 ## Install
 
@@ -62,7 +62,7 @@ See [example.js](https://github.com/CleverTap/clevertap-node/blob/master/example
 
 Also please see our [Server API documentation](https://support.clevertap.com/server/overview/).
 
-### Tests
+## Tests
 
 ```
 npm install  
