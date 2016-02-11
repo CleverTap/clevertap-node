@@ -1,8 +1,8 @@
 {
-  "name": "clevertap-node",
+  "name": "clevertap",
   "version": "1.0.0",
   "description": "CleverTap API library for node",
-  "main": "./lib/clevertap.js",
+  "main": "./lib/clevertap",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
