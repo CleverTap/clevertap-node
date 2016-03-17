@@ -12,7 +12,10 @@
   },
   "keywords": [
     "node",
-    "CleverTap"
+    "CleverTap",
+    "mobile",
+    "analytics",
+    "push"
   ],
   "author": "CleverTap",
   "license": "MIT",

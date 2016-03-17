@@ -102,6 +102,12 @@ query = {"event_name":
         }
 
 //callback style
+//clevertap.profile({"objectId":"-2ce3cca260664f70b82b1c6bb505f462", debug:1}, (res) => {_log("profile", res)});
+
+// or if you prefer Promises
+clevertap.profile({"objectId":"-2ce3cca260664f70b82b1c6bb505f462", debug:1}).then( (res) => {_log("profile", res)} );
+
+//callback style
 //clevertap.profiles(query, {debug:1, batchSize:200}, (res) => {_log("profiles", res)});
 
 // or if you prefer Promises

@@ -84,13 +84,15 @@ describe('#upload()', function () {
     });
 });
 
-var query = {"event_name":
-            "choseNewFavoriteFood",
-            "props": 
-            [{"name":"value","operator":"contains", "value":"piz"}],
-            "from": 20150810,
-            "to": 20151025
-        };
+describe('#profile()', function () {
+    it('should return 1 user profile with a status of success', function (done) {
+      clevertap.profile({"objectId":"-2ce3cca260664f70b82b1c6bb505f462"},(res) => {
+          assert.equal("success", res.status);
+          done();
+      });
+    });
+});
+
 
 describe('#profiles()', function () {
     it('should return 1 user profile', function (done) {
