@@ -76,35 +76,45 @@ var data = [
 
 
 describe('#upload()', function () {
-    it('should return 6 processed records', function (done) {
-      clevertap.upload(data, {batchSize:1000}).then( (res) => {
+    it('should return 6 processed records', function () {
+      return clevertap.upload(data, {batchSize:1000}).then( (res) => {
+          if (!res) res = {};
           assert.equal(6, res.processed);
-          done();
       });
     });
 });
 
+
 describe('#profile()', function () {
-    it('should return 1 user profile with a status of success', function (done) {
-      clevertap.profile({"objectId":"-2ce3cca260664f70b82b1c6bb505f462"},(res) => {
+    it('should return 1 user profile with a status of success', function () {
+      return clevertap.profile({"objectId":"-2ce3cca260664f70b82b1c6bb505f462"}).then( (res) => {
+          if (!res) res = {};
           assert.equal("success", res.status);
-          done();
       });
     });
 });
+
+
+var profilesQuery = {"event_name":
+            "choseNewFavoriteFood",
+            "props": 
+            [{"name":"value","operator":"contains", "value":"piz"}],
+            "from": 20150810,
+            "to": 20151025
+        };
 
 
 describe('#profiles()', function () {
-    it('should return 1 user profile', function (done) {
-      clevertap.profiles(query,(res) => {
+    it('should return 1 user profile', function () {
+      return clevertap.profiles(profilesQuery).then( (res) => {
+          if (!res) res = [];
           assert.equal(1, res.length);
-          done();
       });
     });
 });
 
 
-query = {"event_name":
+var eventsQuery = {"event_name":
             "choseNewFavoriteFood",
             "props": 
             [{"name":"value","operator":"contains", "value":"piz"}],
@@ -113,10 +123,10 @@ query = {"event_name":
         };
 
 describe('#events()', function () {
-    it('should return at least 1 event', function (done) {
-      clevertap.events(query,(res) => {
+    it('should return at least 1 event', function () {
+      return clevertap.events(eventsQuery).then( (res) => {
+          if (!res) res = [];
           assert(res.length >= 1);
-          done();
       });
     });
 });

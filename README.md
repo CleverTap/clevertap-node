@@ -54,6 +54,45 @@ clevertap.profiles(query, {debug:1, batchSize:200}, (res) => {console.log(res)})
 // or if you prefer Promises
 clevertap.profiles(query, {debug:1, batchSize:200}).then( (res) => {console.log(res)} );
 
+// send a push notification
+var createPayload = {
+        "name": "green freedom",
+        "when": "now",
+        "where": {
+            "event_name": "App Launched",
+            "from": 20160101,
+            "to": 20160317,
+            },
+        "content":{
+            "title":"Hello!",
+            "body":"Strictly Green Lantern fans only!",
+            "platform_specific": {
+                "ios": {
+                    "deep_link": "judepereira.com",
+                    "sound_file": "judepereira.wav",
+                    "category": "reactive",
+                    "badge_count": 1,
+                    "foo": "bar_ios"
+                    },
+                "android": {
+                    "background_image": "http://judepereira.com/a.jpg",
+                    "default_sound": true,
+                    "deep_link": "judepereira.com",
+                    "foo": "bar_android"
+                    }
+                }
+            },
+        "devices": [
+            "ios"
+            ],
+        }
+
+//callback style
+clevertap.targets(clevertap.TARGET_CREATE, createPayload, {"debug":1}, (res) => {console.log(res)} );
+
+// or if you prefer Promises
+clevertap.targets(clevertap.TARGET_CREATE, createPayload, {"debug":1}).then( (res) => {console.log(res)} );
+
 ```
 
 See [example.js](https://github.com/CleverTap/clevertap-node/blob/master/example.js) for more detailed usage.
@@ -63,5 +102,6 @@ Also please see our [Server API documentation](https://support.clevertap.com/ser
 ## Tests
 ```
 npm install  
-npm test
+npm test // all tests 
+npm run testpush // just push specific tests
 ```

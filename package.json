@@ -1,10 +1,11 @@
 {
   "name": "clevertap",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CleverTap API library for node",
   "main": "./lib/clevertap",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test --timeout 5000",
+    "testpush": "mocha test/push_test.js --timeout 5000"
   },
   "repository": {
     "type": "git",
