@@ -16,7 +16,8 @@ Fully async Node.js server module for accessing the [CleverTap](https://cleverta
 const CleverTap = require('clevertap');
 
 // init the library with your CleverTap Account Id and CleverTap Account Passcode
-const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE);
+// Clevertap Api Endpoint(Singapore - sg1, India - in1, United States - us1,Europe - eu1)
+const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE,YOUR_CLEVERTAP_ACCOUNT_END_POINT);
 
 // the library supports both callbacks and Promises
 
@@ -28,10 +29,8 @@ clevertap.upload(data, {"debug":1, batchSize:50}).then( (res) => {console.log(re
 
 // query for events
 var query = {"event_name":"choseNewFavoriteFood",
-              "props": 
-                [{"name":"value","operator":"contains", "value":"piz"}],
               "from": 20150810,
-              "to": 20151025
+              "to": 20210814
             };
 
 //callback style
@@ -42,10 +41,8 @@ clevertap.events(query, {debug:1, batchSize:500}).then( (res) => {console.log(re
 
 //query for user profiles
 var query = {"event_name":"choseNewFavoriteFood",
-              "props": 
-                [{"name":"value","operator":"contains", "value":"piz"}],
               "from": 20150810,
-              "to": 20151025
+              "to": 20210814
             }
 
 //callback style
@@ -61,7 +58,7 @@ var createPayload = {
         "where": {
             "event_name": "App Launched",
             "from": 20160101,
-            "to": 20160317,
+            "to": 20210814,
             },
         "content":{
             "title":"Hello!",

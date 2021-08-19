@@ -5,6 +5,7 @@ const CT_ACCOUNT_PASSCODE = "QAE-AWB-AAAL"
 
 const CleverTap = require('../lib/clevertap');
 const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE);
+const CT_ENDPOINT = "eu1"
 
 var t = Math.floor((new Date).getTime()/1000);
 
