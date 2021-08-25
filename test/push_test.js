@@ -2,20 +2,21 @@ const assert = require('assert');
 
 const CT_ACCOUNT_ID = "948-4KK-444Z"
 const CT_ACCOUNT_PASSCODE = "QAE-AWB-AAAL"
+const CT_ENDPOINT = "eu1"
 
 const CleverTap = require('../lib/clevertap');
-const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE);
-const CT_ENDPOINT = "eu1"
+const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE,CT_ENDPOINT);
 
 var t = Math.floor((new Date).getTime()/1000);
 
 var estimatePayload = {
         "name": "green freedom",
         "when": "now",
+        "estimate_only": true,
         "where": {
             "event_name": "App Launched",
             "from": 20160101,
-            "to": 20160317,
+            "to": 20160801,
             },
         "content":{
             "title":"Hello!",
@@ -32,8 +33,9 @@ var estimatePayload = {
                     "background_image": "http://judepereira.com/a.jpg",
                     "default_sound": true,
                     "deep_link": "judepereira.com",
-                    "foo": "bar_android"
-                    }
+                    "foo": "bar_android",
+                    "wzrk_cid":"BRTesting"
+                }
                 }
             },
         "devices": [
@@ -75,11 +77,13 @@ var createPayload = {
                     "background_image": "http://judepereira.com/a.jpg",
                     "default_sound": true,
                     "deep_link": "judepereira.com",
-                    "foo": "bar_android"
-                    }
+                    "foo": "bar_android",
+                    "wzrk_cid":"BRTesting"
+                }
                 }
             },
         "devices": [
+            "android",
             "ios"
             ],
         }
@@ -88,13 +92,14 @@ describe('#targets_create()', function () {
     it('should return status success', function () {
       return clevertap.targets(clevertap.TARGET_CREATE, createPayload, {"debug":1}).then( (res) => {
           if (!res) res = {};
+          id=res.id;
           assert.equal("success", res.status);
       });
     });
 });
 
 
-var listPayload = {"from": 20160101, "to": 20160317}
+var listPayload = {"from": 20160101, "to": 20170101}
 
 describe('#targets_list()', function () {
     it('should return status success', function () {
@@ -106,7 +111,7 @@ describe('#targets_list()', function () {
 });
 
 
-var stopPayload = {"id": 1458261857}
+var stopPayload = {"id": 1629904249}
 
 describe('#targets_stop()', function () {
     it('should return status success', function () {
@@ -118,7 +123,7 @@ describe('#targets_stop()', function () {
 });
 
 
-var resultPayload = {"id": 1458261857}
+var resultPayload = {"id": 1629904249}
 
 describe('#targets_result()', function () {
     it('should return status success', function () {

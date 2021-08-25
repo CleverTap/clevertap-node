@@ -100,7 +100,7 @@ var profilesQuery = {"event_name":
             "choseNewFavoriteFood",
             /*"props":
             [{"name":"value","operator":"contains", "value":"piz"}],*/
-            "from": 20150810,
+            "from": 20200814,
             "to": 20210814
         };
 
@@ -119,7 +119,7 @@ var eventsQuery = {"event_name":
             "choseNewFavoriteFood",
            /* "props":
             [{"name":"value","operator":"contains", "value":"piz"}],*/
-            "from": 20150810,
+            "from": 20200814,
             "to": 20210814
         };
 
