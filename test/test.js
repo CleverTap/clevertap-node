@@ -98,10 +98,10 @@ describe('#profile()', function () {
 
 var profilesQuery = {"event_name":
             "choseNewFavoriteFood",
-            /*"props":
-            [{"name":"value","operator":"contains", "value":"piz"}],*/
-            "from": 20200814,
-            "to": 20210814
+            "props":
+            [{"name":"value","operator":"contains", "value":"piz"}],
+            "from": 20210101,
+            "to": 20210701
         };
 
 
@@ -117,10 +117,10 @@ describe('#profiles()', function () {
 
 var eventsQuery = {"event_name":
             "choseNewFavoriteFood",
-           /* "props":
-            [{"name":"value","operator":"contains", "value":"piz"}],*/
-            "from": 20200814,
-            "to": 20210814
+            "props":
+            [{"name":"value","operator":"contains", "value":"piz"}],
+            "from": 20210101,
+            "to": 20210701
         };
 
 describe('#events()', function () {

@@ -29,8 +29,10 @@ clevertap.upload(data, {"debug":1, batchSize:50}).then( (res) => {console.log(re
 
 // query for events
 var query = {"event_name":"choseNewFavoriteFood",
-              "from": 20150810,
-              "to": 20210814
+                "props":
+                [{"name":"value","operator":"contains", "value":"piz"}],
+                "from": 20210101,
+                "to": 20210701
             };
 
 //callback style
@@ -41,8 +43,8 @@ clevertap.events(query, {debug:1, batchSize:500}).then( (res) => {console.log(re
 
 //query for user profiles
 var query = {"event_name":"choseNewFavoriteFood",
-              "from": 20150810,
-              "to": 20210814
+              "from": 20210101,
+              "to": 20210701
             }
 
 //callback style
@@ -57,8 +59,8 @@ var createPayload = {
         "when": "now",
         "where": {
             "event_name": "App Launched",
-            "from": 20160101,
-            "to": 20160801,
+            "from": 20210101,
+            "to": 20210701,
             },
         "content":{
             "title":"Hello!",
@@ -100,8 +102,8 @@ var estimatePayload = {
     "estimate_only": true,
     "where": {
         "event_name": "App Launched",
-        "from": 20160101,
-        "to": 20160801,
+        "from": 20210101,
+        "to": 20210701,
     },
     "content":{
         "title":"Hello!",
@@ -135,7 +137,7 @@ clevertap.targets(clevertap.TARGET_ESTIMATE, estimatePayload, {"debug":1}, (res)
 clevertap.targets(clevertap.TARGET_ESTIMATE, estimatePayload, {"debug":1}).then( (res) => {console.log(res)} );
 
 //List all target compaigns in a date range
-var listPayload = {"from": 20160101, "to": 20170101}
+var listPayload = {"from": 20210101, "to": 20210701}
 //callback style
 clevertap.targets(clevertap.TARGET_LIST, listPayload, {"debug":1}, (res) => {console.log(res)} );
 

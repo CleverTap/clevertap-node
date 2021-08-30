@@ -59,8 +59,8 @@ var createPayload = {
         "when": "now",
         "where": {
             "event_name": "App Launched",
-            "from": 20160101,
-            "to": 20160317,
+            "from": 20210101,
+            "to": 20210701,
             },
         "content":{
             "title":"Hello!",
@@ -99,7 +99,7 @@ describe('#targets_create()', function () {
 });
 
 
-var listPayload = {"from": 20160101, "to": 20170101}
+var listPayload = {"from": 20210101, "to": 20210701}
 
 describe('#targets_list()', function () {
     it('should return status success', function () {
