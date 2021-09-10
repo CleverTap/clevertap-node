@@ -1,32 +1,32 @@
 const assert = require('assert');
+const CleverTap = require('../lib/clevertap');
 
 const CT_ACCOUNT_ID = "948-4KK-444Z"
 const CT_ACCOUNT_PASSCODE = "QAE-AWB-AAAL"
-const CT_ENDPOINT = ""
+const CT_ACCOUNT_REGION = '' // will default to CleverTap.REGIONS.EUROPE
 
-const CleverTap = require('../lib/clevertap');
-const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE,CT_ENDPOINT);
+const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE, CT_ACCOUNT_REGION);
 
 var t = Math.floor((new Date).getTime()/1000);
 
 var data = [
             {"type":"event",
                 "identity":"6264372124",
-                "evtName":"choseNewFavoriteFood", 
+                "evtName":"choseNewFavoriteFood",
                 "evtData":{
                     "value":"sushi"
                     },
                 },
 
-            {"type":"profile", 
+            {"type":"profile",
                 "identity":"6264372124",
-                "ts":t, 
+                "ts":t,
                 "profileData":{
                     "favoriteColor":"green",
                     "Age":30,
                     "Phone":"+14155551234",
                     "Email":"peter@foo.com",
-                    }, 
+                    },
                 },
 
             {"type":"event",
@@ -41,9 +41,9 @@ var data = [
               },
 
             {'type': 'profile',
-                'objectId': "-2ce3cca260664f70b82b1c6bb505f462", 
+                'objectId': "-2ce3cca260664f70b82b1c6bb505f462",
                 'profileData': {'favoriteFood': 'hot dogs'}
-                }, 
+                },
 
             {'type': 'event',
                 'objectId': "-2ce3cca260664f70b82b1c6bb505f462",

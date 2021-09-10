@@ -1,11 +1,11 @@
 const assert = require('assert');
+const CleverTap = require('../lib/clevertap');
 
 const CT_ACCOUNT_ID = "948-4KK-444Z"
 const CT_ACCOUNT_PASSCODE = "QAE-AWB-AAAL"
-const CT_ENDPOINT = "eu1"
+const CT_ACCOUNT_REGION = CleverTap.REGIONS.EUROPE
 
-const CleverTap = require('../lib/clevertap');
-const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE,CT_ENDPOINT);
+const clevertap = CleverTap.init(CT_ACCOUNT_ID, CT_ACCOUNT_PASSCODE, CT_ACCOUNT_REGION);
 
 var t = Math.floor((new Date).getTime()/1000);
 
