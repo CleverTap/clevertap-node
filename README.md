@@ -14,10 +14,15 @@ Fully async Node.js server module for accessing the [CleverTap](https://cleverta
 
 // require the library
 const CleverTap = require('clevertap');
-
-// init the library with your CleverTap Account Id and CleverTap Account Passcode
-// Clevertap Api Endpoint(Singapore - sg1, India - in1, United States - us1,Europe - eu1)
-const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE,YOUR_CLEVERTAP_ACCOUNT_END_POINT);
+/**
+ init the library with your CleverTap Account Id, CleverTap Account Passcode and CleverTap Account Region
+ Clevertap Account Regions:
+ EUROPE: 'eu1', // default for most accounts
+ INDIA: 'in1',
+ SINGAPORE: 'sg1',
+ US: 'us1'
+*/
+const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE, CleverTap.CLEVERTAP_REGIONS.EUROPE);
 
 // the library supports both callbacks and Promises
 
