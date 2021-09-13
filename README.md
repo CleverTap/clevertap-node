@@ -1,4 +1,5 @@
 # clevertap-node
+[![npm version](https://badge.fury.io/js/clevertap.svg)](https://badge.fury.io/js/clevertap)
 
 [![CI Status](https://app.travis-ci.com/CleverTap/clevertap-node.svg?branch=master)](https://app.travis-ci.com/CleverTap/clevertap-node)
 
