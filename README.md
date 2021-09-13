@@ -1,6 +1,6 @@
 # clevertap-node
 
-[![CI Status](http://img.shields.io/travis/CleverTap/clevertap-node.svg?style=flat)](https://travis-ci.org/CleverTap/clevertap-node)
+[![CI Status](http://img.shields.io/travis/CleverTap/clevertap-node.svg?style=flat)](https://travis-ci.com/CleverTap/clevertap-node)
 
 Fully async Node.js server module for accessing the [CleverTap](https://clevertap.com/) Server API
 
