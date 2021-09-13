@@ -14,9 +14,15 @@ Fully async Node.js server module for accessing the [CleverTap](https://cleverta
 
 // require the library
 const CleverTap = require('clevertap');
-
-// init the library with your CleverTap Account Id and CleverTap Account Passcode
-const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE);
+/**
+ init the library with your CleverTap Account Id, CleverTap Account Passcode and CleverTap Account Region
+ Clevertap Account Regions:
+ EUROPE: 'eu1', // default for most accounts
+ INDIA: 'in1',
+ SINGAPORE: 'sg1',
+ US: 'us1'
+*/
+const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE, CleverTap.CLEVERTAP_REGIONS.EUROPE);
 
 // the library supports both callbacks and Promises
 
@@ -28,10 +34,10 @@ clevertap.upload(data, {"debug":1, batchSize:50}).then( (res) => {console.log(re
 
 // query for events
 var query = {"event_name":"choseNewFavoriteFood",
-              "props": 
+                "props":
                 [{"name":"value","operator":"contains", "value":"piz"}],
-              "from": 20150810,
-              "to": 20151025
+                "from": 20210101,
+                "to": 20210701
             };
 
 //callback style
@@ -42,10 +48,8 @@ clevertap.events(query, {debug:1, batchSize:500}).then( (res) => {console.log(re
 
 //query for user profiles
 var query = {"event_name":"choseNewFavoriteFood",
-              "props": 
-                [{"name":"value","operator":"contains", "value":"piz"}],
-              "from": 20150810,
-              "to": 20151025
+              "from": 20210101,
+              "to": 20210701
             }
 
 //callback style
@@ -60,8 +64,8 @@ var createPayload = {
         "when": "now",
         "where": {
             "event_name": "App Launched",
-            "from": 20160101,
-            "to": 20160317,
+            "from": 20210101,
+            "to": 20210701,
             },
         "content":{
             "title":"Hello!",
@@ -78,11 +82,13 @@ var createPayload = {
                     "background_image": "http://judepereira.com/a.jpg",
                     "default_sound": true,
                     "deep_link": "judepereira.com",
-                    "foo": "bar_android"
+                    "foo": "bar_android",
+                    "wzrk_cid":"BRTesting"
                     }
                 }
             },
         "devices": [
+            "android",
             "ios"
             ],
         }
@@ -92,6 +98,74 @@ clevertap.targets(clevertap.TARGET_CREATE, createPayload, {"debug":1}, (res) => 
 
 // or if you prefer Promises
 clevertap.targets(clevertap.TARGET_CREATE, createPayload, {"debug":1}).then( (res) => {console.log(res)} );
+
+//Estimate a target compaigns
+var estimatePayload = {
+    "name": "green freedom",
+    "when": "now",
+    //This flag should be add in the the payload for target estimate api
+    "estimate_only": true,
+    "where": {
+        "event_name": "App Launched",
+        "from": 20210101,
+        "to": 20210701,
+    },
+    "content":{
+        "title":"Hello!",
+        "body":"Strictly Green Lantern fans only!",
+        "platform_specific": {
+            "ios": {
+                "deep_link": "judepereira.com",
+                "sound_file": "judepereira.wav",
+                "category": "reactive",
+                "badge_count": 1,
+                "foo": "bar_ios"
+            },
+            "android": {
+                "background_image": "http://judepereira.com/a.jpg",
+                "default_sound": true,
+                "deep_link": "judepereira.com",
+                "foo": "bar_android",
+                "wzrk_cid":"BRTesting"
+            }
+        }
+    },
+    "devices": [
+        "android",
+        "ios"
+    ],
+}
+//callback style
+clevertap.targets(clevertap.TARGET_ESTIMATE, estimatePayload, {"debug":1}, (res) => {console.log(res)} );
+
+// or if you prefer Promises
+clevertap.targets(clevertap.TARGET_ESTIMATE, estimatePayload, {"debug":1}).then( (res) => {console.log(res)} );
+
+//List all target compaigns in a date range
+var listPayload = {"from": 20210101, "to": 20210701}
+//callback style
+clevertap.targets(clevertap.TARGET_LIST, listPayload, {"debug":1}, (res) => {console.log(res)} );
+
+// or if you prefer Promises
+clevertap.targets(clevertap.TARGET_LIST, listPayload, {"debug":1}).then( (res) => {console.log(res)} );
+
+//Stop a specific target compaign
+var stopPayload = {"id": 1629904249}
+//callback style
+clevertap.targets(clevertap.TARGET_STOP, stopPayload, {"debug":1}, (res) => {console.log(res)} );
+
+// or if you prefer Promises
+clevertap.targets(clevertap.TARGET_STOP, createPayload, {"debug":1}).then( (res) => {console.log(res)} );
+
+//Resule out  a target compaign
+var resultPayload = {"id": 1629904249}
+//callback style
+clevertap.targets(clevertap.TARGET_RESULT, resultPayload, {"debug":1}, (res) => {console.log(res)} );
+
+// or if you prefer Promises
+clevertap.targets(clevertap.TARGET_RESULT, resultPayload, {"debug":1}).then( (res) => {console.log(res)} );
+
+
 
 ```
 
