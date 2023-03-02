@@ -133,3 +133,136 @@ describe('#targets_result()', function () {
       });
     });
 });
+
+var deletePayload = {"id": 1629904249}
+
+describe('#delete()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, deletePayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var demergePayload = {"id": 1629904249}
+
+describe('#demerge()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, demergePayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var uploadEventsPayload = {"id": 1629904249}
+
+describe('#uploadEvents()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, uploadEventsPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var getEventCountPayload = {"id": 1629904249}
+
+describe('#getEventCount()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, getEventCountPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var uploadDeviceTokensPayload = {"id": 1629904249}
+
+describe('#uploadDeviceTokens()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, uploadDeviceTokensPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var subscribePayload = {"id": 1629904249}
+
+describe('#subscribe()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, subscribePayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var getCampaignsPayload = {"id": 1629904249}
+
+describe('#getCampaigns()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, getCampaignsPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var getMessageReportsPayload = {"id": 1629904249}
+
+describe('#getMessageReports()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, getMessageReportsPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var realTimeCountsPayload = {"id": 1629904249}
+
+describe('#realTimeCounts()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, realTimeCountsPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var topPropertyCountsPayload = {"id": 1629904249}
+
+describe('#topPropertyCounts()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, topPropertyCountsPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var trendsPayload = {"id": 1629904249}
+
+describe('#trends()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, trendsPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var stopScheduledCampaignsPayload = {"id": 1629904249}
+
+describe('#stopScheduledCampaigns()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, stopScheduledCampaignsPayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+var disassociatePayload = {"id": 1629904249}
+
+describe('#disassociate()', function () {
+    it('should return status success', function () {
+      return clevertap.targets(clevertap.TARGET_RESULT, disassociatePayload, {"debug":1}).then( (res) => {
+          if (!res) res = {};
+          assert.equal("success", res.status);
+      });
+    });
+});
+
+

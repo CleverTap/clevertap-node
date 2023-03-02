@@ -132,3 +132,213 @@ describe('#events()', function () {
     });
 });
 
+var deleteQuery =  {"identity":
+                    ["client-19827239", "abc"],
+                    "props":
+                    [{"name":"value","operator":"contains", "value":"piz"}],
+                    "guid": ["ctid123", "ctid456"]
+                    
+              };
+
+
+describe('#delete()', function () {
+                it('should return success response', function () {
+                  return clevertap.delete(deleteQuery).then( (res) => {
+                      if (!res) res = [];
+                      assert(res.length >= 1);
+                  });
+                });
+    });
+    var demergeQuery =  {"identity":
+    ["client-19827239", "abc"],
+    "props":
+    [{"name":"value","operator":"contains", "value":"piz"}]
+
+    };
+
+
+describe('#demerge()', function () {
+it('should return success response', function () {
+  return clevertap.demerge(demergeQuery).then( (res) => {
+      if (!res) res = [];
+      assert(res.length >= 1);
+  });
+});
+});
+var uploadEventsQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#uploadEvents()', function () {
+it('should return success response', function () {
+return clevertap.uploadEvents(uploadEventsQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var getEventCountQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#getEventCount()', function () {
+it('should return success response', function () {
+return clevertap.getEventCount(getEventCountQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var uploadDeviceTokensQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#uploadDeviceTokens()', function () {
+it('should return success response', function () {
+return clevertap.uploadDeviceTokens(uploadDeviceTokensQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var subscribeQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#subscribe()', function () {
+it('should return success response', function () {
+return clevertap.subscribe(subscribeQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var getCampaignsQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#getCampaigns()', function () {
+it('should return success response', function () {
+return clevertap.getCampaigns(getCampaignsQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var getMessageReportsQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#getMessageReports()', function () {
+it('should return success response', function () {
+return clevertap.getMessageReports(getMessageReportsQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var realTimeCountsQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#realTimeCounts()', function () {
+it('should return success response', function () {
+return clevertap.realTimeCounts(realTimeCountsQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var topPropertyCountsQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#topPropertyCounts()', function () {
+it('should return success response', function () {
+return clevertap.topPropertyCounts(topPropertyCountsQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var trendsQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#trends()', function () {
+it('should return success response', function () {
+return clevertap.trends(trendsQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var stopScheduledCampaignsQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#stopScheduledCampaigns()', function () {
+it('should return success response', function () {
+return clevertap.stopScheduledCampaigns(stopScheduledCampaignsQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+var disassociateQuery =  {"identity":
+["client-19827239", "abc"],
+"props":
+[{"name":"value","operator":"contains", "value":"piz"}]
+
+};
+
+
+describe('#disassociate()', function () {
+it('should return success response', function () {
+return clevertap.disassociate(disassociateQuery).then( (res) => {
+  if (!res) res = [];
+  assert(res.length >= 1);
+});
+});
+});
+
