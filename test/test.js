@@ -131,7 +131,7 @@ describe('#events()', function () {
       });
     });
 });
-
+// Define the deleteQuery object which includes the identities, properties
 var deleteQuery =  {"identity":
                     ["client-19827239", "abc"],
                     "props":
@@ -139,7 +139,6 @@ var deleteQuery =  {"identity":
                     "guid": ["ctid123", "ctid456"]
                     
               };
-
 
 describe('#delete()', function () {
                 it('should return success response', function () {
@@ -149,6 +148,7 @@ describe('#delete()', function () {
                   });
                 });
     });
+    // Define the demergeQuery object which includes the identities, properties
     var demergeQuery =  {"identity":
     ["client-19827239", "abc"],
     "props":
@@ -165,6 +165,7 @@ it('should return success response', function () {
   });
 });
 });
+// Define the uploadEventsQuery object which includes the identities, properties
 var uploadEventsQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -181,6 +182,7 @@ return clevertap.uploadEvents(uploadEventsQuery).then( (res) => {
 });
 });
 });
+// Define the getEventCountQuery object which includes the identities, properties
 var getEventCountQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -197,6 +199,8 @@ return clevertap.getEventCount(getEventCountQuery).then( (res) => {
 });
 });
 });
+
+// Define the uploadDeviceTokenQuery object which includes the identities, properties
 var uploadDeviceTokensQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -213,6 +217,8 @@ return clevertap.uploadDeviceTokens(uploadDeviceTokensQuery).then( (res) => {
 });
 });
 });
+
+// Define the subscribeQuery object which includes the identities, properties
 var subscribeQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -229,6 +235,8 @@ return clevertap.subscribe(subscribeQuery).then( (res) => {
 });
 });
 });
+
+// Define the getCampaignsQuery object which includes the identities, properties
 var getCampaignsQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -245,6 +253,8 @@ return clevertap.getCampaigns(getCampaignsQuery).then( (res) => {
 });
 });
 });
+
+// Define the getMessageReportsQuery object which includes the identities, properties
 var getMessageReportsQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -261,6 +271,8 @@ return clevertap.getMessageReports(getMessageReportsQuery).then( (res) => {
 });
 });
 });
+
+// Define the realTimeCountsQuery object which includes the identities, properties
 var realTimeCountsQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -277,6 +289,8 @@ return clevertap.realTimeCounts(realTimeCountsQuery).then( (res) => {
 });
 });
 });
+
+// Define the topPropertyCountsQuery object which includes the identities, properties
 var topPropertyCountsQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -293,6 +307,8 @@ return clevertap.topPropertyCounts(topPropertyCountsQuery).then( (res) => {
 });
 });
 });
+
+// Define the trendsQuery object which includes the identities, properties
 var trendsQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -309,6 +325,8 @@ return clevertap.trends(trendsQuery).then( (res) => {
 });
 });
 });
+
+// Define the stopScheduledCampaignsQuery object which includes the identities, properties
 var stopScheduledCampaignsQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
@@ -325,6 +343,8 @@ return clevertap.stopScheduledCampaigns(stopScheduledCampaignsQuery).then( (res)
 });
 });
 });
+
+// Define the disassociateQuery object which includes the identities, properties
 var disassociateQuery =  {"identity":
 ["client-19827239", "abc"],
 "props":
