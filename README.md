@@ -178,5 +178,4 @@ Also please see our [Server API documentation](https://support.clevertap.com/ser
 ```
 npm install  
 npm test // all tests 
-npm run testpush // just push specific tests
 ```

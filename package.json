@@ -26,13 +26,13 @@
   "homepage": "https://github.com/CleverTap/clevertap-node",
   "dependencies": {
     "clevertap": "^1.2.0",
-    "querystring": "^0.2.0",
-    "request": "^2.69.0"
+    "node-fetch": "^2.6.9",
+    "querystring": "^0.2.0"
   },
   "engines": {
     "node": ">=12.13.1"
   },
   "devDependencies": {
-    "mocha": "^2.4.5"
+    "mocha": "^10.2.0"
   }
 }
