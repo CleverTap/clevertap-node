@@ -1,6 +1,6 @@
 {
   "name": "clevertap",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "CleverTap API library for node",
   "main": "./lib/clevertap",
   "scripts": {
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/CleverTap/clevertap-node",
   "dependencies": {
-    "clevertap": "^1.2.0",
     "node-fetch": "^2.6.9",
     "querystring": "^0.2.0"
   },
