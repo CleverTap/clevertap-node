@@ -23,7 +23,7 @@ const CleverTap = require('clevertap');
  SINGAPORE: 'sg1',
  US: 'us1'
 */
-const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE, CleverTap.CLEVERTAP_REGIONS.EUROPE);
+const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE, CleverTap.REGIONS.EUROPE);
 
 // the library supports both callbacks and Promises
 
