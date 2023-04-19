@@ -332,7 +332,7 @@ clevertap.trends(trendspayload, { debug: 1 }).then((res) => {console.log(res);})
 
 See [example.js](https://github.com/CleverTap/clevertap-node/blob/master/example.js) for more detailed usage.
 
-Also please see our [Server API documentation](https://support.clevertap.com/server/overview/).
+Also please see our [Server API documentation](https://developer.clevertap.com/docs/api-overview).
 
 ## Tests
 ```
