@@ -22,8 +22,8 @@ const CleverTap = require('clevertap');
  INDIA: 'in1',
  SINGAPORE: 'sg1',
  US: 'us1',
- INDONESIA: "aps3",
- MIDDLEEAST: "mec1"
+ INDONESIA: 'aps3',
+ MIDDLEEAST: 'mec1'
 */
 const clevertap = CleverTap.init(YOUR_CLEVERTAP_ACCOUNT_ID, YOUR_CLEVERTAP_ACCOUNT_PASSCODE, CleverTap.CLEVERTAP_REGIONS.EUROPE);
 
