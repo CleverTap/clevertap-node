@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/CleverTap/clevertap-node",
   "dependencies": {
-    "node-fetch": "^2.6.9",
+    "node-fetch": "^2.7.0",
     "querystring": "^0.2.0"
   },
   "engines": {
