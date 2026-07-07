@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 1.3.1 (July 7, 2026)
+Add evtData to declaration list to fix `ReferenceError` when using esbuild strict mode.
+
 ## 1.3.0 (April 19, 2023)
 - Adds Profile, Events, Reports and Campaign API's.
 
